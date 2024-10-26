@@ -23,20 +23,16 @@ window.addEventListener("load", () => {
             console.log("Weights:", data.weights);
             console.log("b:", data.b);
 
-            // داده‌ها را به متغیرها اختصاص بده
             weights = data.weights;
             b = data.b;
 
-            // تغییر نمایش دکمه‌ها
             btnsAboutTrainSection.classList.add("hidden");
             btnSecSabt.classList.remove("hidden");
         })
         .catch(error => {
-            // اگر فایل JSON پیدا نشد یا خطایی رخ داد
             console.log("No data found or error occurred, returning 0");
             console.error(error);
 
-            // فراخوانی تابع مقداردهی اولیه یا عملیات مورد نظر
             megdarDehi();
         });
 });
@@ -46,24 +42,18 @@ function showModal(message) {
     const modal = document.getElementById('blue-modal');
     const modalMessage = document.getElementById('modal-message');
 
-    // Set the message
     modalMessage.textContent = message;
 
-    // Display the modal
     modal.style.display = 'block';
 
-    // Add animation for showing the modal
     modal.style.animation = 'fadeIn 0.5s ease';
 
-    // Automatically close the modal after 3 seconds
     setTimeout(() => {
         closeModal(modal);
-    }, 1500); // 3000 milliseconds = 3 seconds
+    }, 1500); 
 }
 
-// Function to close the modal
 function closeModal(modal) {
-    // Add animation for closing the modal
     modal.style.animation = 'fadeOut 0.5s ease';
     modal.style.display = 'none';
 
@@ -124,9 +114,9 @@ function saveMatrix(marker) {
 
         btns.forEach(btn => {
             if (btn.id === "active") {
-                data.push(1); // دکمه فعال
+                data.push(1); 
             } else {
-                data.push(-1); // دکمه غیرفعال
+                data.push(-1); 
             }
         });
 
@@ -172,7 +162,7 @@ doneTrainBtn.addEventListener("click", () => {
         oldWeights = [...weights]
 
         for (let item of dataForTrain) {
-            yNetInput = 0;  // در هر بار محاسبه باید yNetInput صفر شود
+            yNetInput = 0; 
             index = 0
             for (let x of item.data) {
                 yNetInput += weights[index] * x
@@ -204,32 +194,26 @@ doneTrainBtn.addEventListener("click", () => {
         epoch++
     }
     console.log("epoch :", epoch);
-    // ساختن شیء داده‌ها
+
     const data = {
         weights: weights,
         b: b
     };
 
-    // تبدیل داده‌ها به JSON
     const jsonData = JSON.stringify(data);
 
-    // ساخت Blob برای ذخیره داده‌های JSON در یک فایل
     const blob = new Blob([jsonData], { type: 'application/json' });
 
-    // ایجاد یک URL برای فایل Blob
     const url = URL.createObjectURL(blob);
 
-    // ایجاد یک عنصر <a> برای دانلود فایل JSON
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'trainData.json';  // نام فایلی که دانلود می‌شود
+    a.download = 'trainData.json'; 
     document.body.appendChild(a);
     a.click();
 
-    // حذف لینک از DOM
     document.body.removeChild(a);
 
-    // آزاد کردن URL Object
     URL.revokeObjectURL(url);
 
     console.log("Data has been saved as JSON file!");
@@ -259,9 +243,9 @@ recognizeBtn.addEventListener("click", () => {
     if (flag) {
         btns.forEach(btn => {
             if (btn.id === "active") {
-                infoes.push(1); // دکمه فعال
+                infoes.push(1); 
             } else {
-                infoes.push(-1); // دکمه غیرفعال
+                infoes.push(-1);
             }
         })
         infoes.forEach(info => {
