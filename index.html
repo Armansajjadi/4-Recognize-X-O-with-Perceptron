@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fa" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" href="css/Style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="icon" href="./images/icons8-school-96.png" type="image/x-icon" />
+    <title>X/O Recignation Perceptron</title>
+</head>
+
+<body class="h-screen bg-zinc-100 flex justify-center items-center font-sans">
+    <!-- Modal Structure -->
+    <div id="blue-modal" class="modal">
+        <div class="modal-content">
+             <i class="fa-solid fa-message mr-2"></i>
+             <span id="modal-message"></span>
+        </div>
+    </div>
+    <div class="space-y-8 text-center scale-75 md:scale-125">
+        <h1 class="font-extrabold text-blue-500 text-3xl">Recognize <span class="text-yellow-400 text-4xl">X</span> and
+            <span class="text-rose-500 text-4xl">O</span> Perceptron
+        </h1> <!-- Grid of buttons (5x5) -->
+        <div class="grid grid-cols-5 gap-[2px] p-6 bg-white rounded-xl shadow-lg">
+            <!-- 25 buttons in a grid -->
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+            <button id="onactive"
+                class="btn bg-blue-500 hover:bg-blue-700 text-white font-semibold p-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+            </button>
+        </div>
+
+        <!-- Save Buttons Section -->
+        <div id="btnsAboutTrainSection" class="flex justify-center space-x-6">
+            <button id="subX"
+                class="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-8 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                Save X
+            </button>
+            <button id="subO"
+                class="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-8 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+                Save O
+            </button>
+            <button id="doneTrainBtn"
+                class="bg-yellow-400 hover:bg-yellow-600 text-white font-semibold py-2 px-8 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50">
+                Done Training
+            </button>
+        </div>
+        <div id="btnSecSabt" class="flex justify-center hidden">
+            <button id="recognizeBtn"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-8 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                <i class="fas fa-eye mr-2"></i> <!-- آیکون رکگنایز -->
+                <span class="font-bold text-lg">Recognize</span>
+            </button>
+
+        </div>
+    </div>
+    <script src="js/app/script.js"></script>
+</body>
+
+</html>
