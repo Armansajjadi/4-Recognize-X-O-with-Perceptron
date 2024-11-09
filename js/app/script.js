@@ -51,7 +51,7 @@ function test(ws, bias) {
             });
             array.forEach(item => {
                 index = 0
-                sum=0
+                sum = 0
                 item.data.forEach(info => {
                     sum += ws[index] * info
                     index++
@@ -68,8 +68,8 @@ function test(ws, bias) {
                     counter++
                 }
             })
-            const accuracyValue=document.getElementById("accuracyValue")
-            accuracyValue.innerHTML=`${((counter / array.length) * 100).toFixed(2)}%`
+            const accuracyValue = document.getElementById("accuracyValue")
+            accuracyValue.innerHTML = `${((counter / array.length) * 100).toFixed(2)}%`
         })
 }
 
@@ -154,11 +154,11 @@ doneTrainBtn.addEventListener("click", () => {
 
         while (training) {
             let totalWeightChange = 0; // Accumulate all weight changes for this epoch
-        
+
             for (let item of dataForTrain) {
                 let yNetInput = weights.reduce((acc, w, idx) => acc + w * item.data[idx], b);
                 let ykoll = yNetInput > teta ? 1 : yNetInput < -teta ? -1 : 0;
-        
+
                 if (ykoll !== item.y) {
                     item.data.forEach((x, idx) => {
                         let deltaWeight = alfa * x * item.y;
@@ -170,15 +170,15 @@ doneTrainBtn.addEventListener("click", () => {
                     totalWeightChange += Math.abs(deltaBias); // Include bias change in the total
                 }
             }
-        
+
             console.log(`Epoch: ${epoch}, Total Weight Change: ${totalWeightChange}`);
-        
+
             // Stop if total weight change is below the threshold, indicating convergence
             if (totalWeightChange < minWeightChangeThreshold) {
                 training = false;
                 console.log("Converged: No significant weight changes in this epoch.");
             }
-        
+
             epoch++;
         }
 
@@ -234,9 +234,11 @@ recognizeBtn.addEventListener("click", () => {
         setTimeout(() => {
             btns.forEach(btn => {
                 if (btn.id == "active") {
-                    btn.classList.replace("bg-rose-500", "bg-blue-500")
-                    btn.classList.replace("hover:bg-rose-700", "hover:bg-blue-700")
-                    btn.id = "onactive"
+                    // Revert classes to inactive state
+                    btn.classList.replace("bg-rose-500", "bg-blue-500");
+                    btn.classList.replace("dark:bg-rose-700", "dark:bg-blue-600");
+                    btn.classList.replace("hover:bg-rose-800", "hover:bg-blue-700");
+                    btn.id = "onactive"; // Change ID back to onactive
                 }
             })
         }, 1500)
